@@ -164,7 +164,7 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('media/images/hero-background.png');
+    background-image: url('../media/images/hero-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
