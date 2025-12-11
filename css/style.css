@@ -164,7 +164,7 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/Emunah/media/images/hero-background.png');
+    background-image: url('/media/images/hero-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1012,5 +1012,6 @@ h4 {
 .btn-wsp:hover img {
     transform: scale(1.1); /* Efecto de "latido" o zoom leve */
 }
+
 
 /* ===== END OF STYLE.CSS ===== */
