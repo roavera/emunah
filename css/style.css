@@ -93,12 +93,29 @@ h4 {
 }
 
 .logo {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+
     font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 600;
     color: var(--color-text-dark);
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+.logo span {
+    font-family: inherit;
+    font-size: inherit; 
+    font-weight: inherit;
+    line-height: 1;
 }
 
 .logo:hover {
