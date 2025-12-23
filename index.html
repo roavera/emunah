@@ -26,9 +26,9 @@
 
                 <nav class="nav-menu" id="navMenu">
                     <a href="#inicio" class="nav-link">Inicio</a>
-                    <a href="#servicios" class="nav-link">Servicios</a>
-                    <a href="#trabajos" class="nav-link">Trabajos</a>
                     <a href="#historia" class="nav-link">Historia</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#cursos" class="nav-link">Cursos</a>
                     <a href="#turno" class="nav-link">Turno</a>
                     <a href="#contacto" class="nav-link">Contacto</a>
                 </nav>
@@ -89,8 +89,8 @@
         </div>
     </section>
 
-    <!--- Sección de Servicios -->
-    <section class="services" id="servicios">
+    <!--- Sección de Atributos -->
+    <section class="services" id="atributos">
         <div class="container">
             <div class="services-content">
                 <div class="services-image">
@@ -158,83 +158,44 @@
         </div>
     </section>         
 
-    <!--- Sección de Trabajos -->
-    <section class="works" id="trabajos">
-        <div class="container">
-            <h2 class="section-title">Nuestros Trabajos</h2>
-            <p class="works-subtitle">Proyectos que transforman espacios en ecosistemas vivos</p>
-
-            <div class="works-masonry" id="worksMasonry">
-                <div class="work-item" data-location="El Bolsón, Río Negro" data-type="Casa"
-                    data-description="Diseño contemporáneo con especies nativas y plantas comestibles integradas en el paisaje residencial.">
-                    <img src="media/images/work-1.png" alt="Jardín residencial con plantas nativas">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 El Bolsón, Río Negro</span>
-                            <span class="work-type">Casa</span>
-                        </div>
+    <!--- Carrusel -->
+    <section class="works" id="servicios">
+    <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="works-subtitle">Transformamos y mantenemos tus espacios verdes con pasión y precisión.</p>
+        
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev-btn" aria-label="Anterior">❮</button>
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="work-item carousel-slide">
+                        <img src="media/images/work-1.png" alt="Servicio 1">
+                        <div class="slide-info"><h3>Mantenimiento</h3><p>Corte y cuidado</p></div>
                     </div>
-                </div>
-
-                <div class="work-item" data-location="Bariloche, Río Negro" data-type="Comunal"
-                    data-description="Espacio colaborativo de permacultura con camas elevadas y área de compostaje comunitario.">
-                    <img src="media/images/work-2.png" alt="Huerta comunitaria">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 Bariloche, Río Negro</span>
-                            <span class="work-type">Comunal</span>
-                        </div>
+                    <div class="work-item carousel-slide">
+                        <img src="media/images/work-2.png" alt="Servicio 2">
+                        <div class="slide-info"><h3>Paisajismo</h3><p>Diseño integral</p></div>
                     </div>
-                </div>
-
-                <div class="work-item" data-location="El Hoyo, Chubut" data-type="Parque"
-                    data-description="Restauración de biodiversidad local con especies nativas patagónicas y senderos interpretativos.">
-                    <img src="media/images/work-3.png" alt="Jardín de plantas nativas">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 El Hoyo, Chubut</span>
-                            <span class="work-type">Parque</span>
-                        </div>
+                    <div class="work-item carousel-slide">
+                        <img src="media/images/work-3.png" alt="Servicio 3">
+                        <div class="slide-info"><h3>Sistemas de Riego</h3><p>Automatización</p></div>
                     </div>
-                </div>
-
-                <div class="work-item" data-location="Villa La Angostura" data-type="Casa"
-                    data-description="Maceteros modernos con diseño curvo, plantas comestibles y hierbas aromáticas para cocina.">
-                    <img src="media/images/curved-planter.png" alt="Diseño de maceteros curvos">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 Villa La Angostura</span>
-                            <span class="work-type">Casa</span>
-                        </div>
+                    <div class="work-item carousel-slide">
+                        <img src="media/images/curved-planter.png" alt="Servicio 4">
+                        <div class="slide-info"><h3>Nivelación</h3><p>Preparación de suelo</p></div>
                     </div>
-                </div>
-
-                <div class="work-item" data-location="El Bolsón, Río Negro" data-type="Casa"
-                    data-description="Camas elevadas para cultivo orgánico familiar con sistema de riego por goteo y compostaje.">
-                    <img src="media/images/garden-beds.png" alt="Camas de cultivo elevadas">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 El Bolsón, Río Negro</span>
-                            <span class="work-type">Casa</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-item" data-location="Cholila, Chubut" data-type="Parque"
-                    data-description="Recuperación de ecosistema patagónico con reforestación nativa y control de especies invasoras.">
-                    <img src="media/images/nature-landscape.png" alt="Paisaje natural">
-                    <div class="work-overlay">
-                        <div class="work-info">
-                            <span class="work-location">📍 Cholila, Chubut</span>
-                            <span class="work-type">Parque</span>
-                        </div>
+                    <div class="work-item carousel-slide">
+                        <img src="media/images/garden-beds.png" alt="Servicio 5">
+                        <div class="slide-info"><h3>Poda</h3><p>Árboles y arbustos</p></div>
                     </div>
                 </div>
             </div>
+            <button class="carousel-btn next-btn" aria-label="Siguiente">❯</button>
         </div>
+    </div>
     </section>
 
-    <!-- Lightbox-->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
         <div class="lightbox-content">
@@ -246,6 +207,59 @@
             </div>
         </div>
     </div>
+
+    <!-- Cursos -->
+    <section class="courses-section" id="cursos">
+    <div class="container">
+        <h2 class="section-title">Aprende Permacultura y Jardinería</h2>
+        <p class="courses-subtitle">Nuestros cursos online, diseñados por expertos en ecosistemas patagónicos, te guiarán paso a paso en la creación de tu propio jardín comestible.</p>
+
+        <div class="courses-grid">
+            
+            <div class="course-card">
+                <img src="media/images/regador-automatico.jpg" alt="Huerta orgánica en crecimiento">
+                <div class="card-body">
+                    <h3>Huerta Orgánica</h3>
+                    <h3>para principiantes</h3>
+                    <p class="course-description">Domina las bases del suelo, la siembra por estación y el control natural de plagas. ¡Ideal para empezar!</p>
+                    <div class="course-meta">
+                        <span>4 Módulos</span>
+                        <span>Nivel Básico</span>
+                    </div>
+                    <a href="enlace-a-compra-curso-1.html" class="btn btn-primary-course">Ver Programa y Comprar</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="media/images/diseniojardin.jpg" alt="Diseño de paisaje con flores nativas">
+                <div class="card-body">
+                    <h3>Diseño de Paisajes</h3>
+                    <h3>con Especies Nativas</h3>
+                    <p class="course-description">Aprende a crear un ecosistema resiliente utilizando flora autóctona de la región, reduciendo el consumo de agua.</p>
+                    <div class="course-meta">
+                        <span>6 Módulos</span>
+                        <span>Nivel Intermedio</span>
+                    </div>
+                    <a href="enlace-a-compra-curso-2.html" class="btn btn-primary-course">Ver Programa y Comprar</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="media/images/invernadero.jpg" alt="Proceso de compostaje">
+                <div class="card-body">
+                    <h3>Compostaje y Biopreparados Avanzados</h3>
+                    <p class="course-description">Convierte residuos en oro negro. Incluye técnicas de lombricultura y fabricación de abonos líquidos.</p>
+                    <div class="course-meta">
+                        <span>3 Módulos</span>
+                        <span>Nivel Avanzado</span>
+                    </div>
+                    <a href="enlace-a-compra-curso-3.html" class="btn btn-primary-course">Ver Programa y Comprar</a>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+    </section>
 
     <!-- Contact Form Section -->
     <section class="contact-section" id="turno">
@@ -382,11 +396,11 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="footer-hours">
+                    <!-- <div class="footer-hours">
                         <p><strong>Horario de atención:</strong></p>
                         <p>Lunes a Viernes: 9:00 - 17:00</p>
                         <p>Sábados: 10:00 - 13:00</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

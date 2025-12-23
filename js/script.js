@@ -64,6 +64,71 @@ function initMasonryGallery() {
     shuffled.forEach(item => masonryContainer.appendChild(item));
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    
+    let index = 0;
+    // Función para obtener cuántos slides se ven según el viewport
+    const getVisibleSlides = () => {
+        if (window.innerWidth > 992) return 3;
+        if (window.innerWidth > 576) return 2;
+        return 1;
+    };
+
+    // Clonación de nodos para buffer infinito
+    const visibleSlides = getVisibleSlides();
+    for(let i=0; i < visibleSlides; i++) {
+        const startClone = slides[i].cloneNode(true);
+        const endClone = slides[slides.length - 1 - i].cloneNode(true);
+        track.appendChild(startClone);
+        track.prepend(endClone);
+    }
+
+    const updatePosition = () => {
+        const slideWidth = track.querySelector('.carousel-slide').clientWidth;
+        track.style.transform = `translateX(${-slideWidth * (index + visibleSlides)}px)`;
+    };
+
+    const move = (direction) => {
+        const slideWidth = track.querySelector('.carousel-slide').clientWidth;
+        track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        
+        direction === 'next' ? index++ : index--;
+        updatePosition();
+
+        // Control de límites (Salto de fase sin transición)
+        track.addEventListener('transitionend', () => {
+            if (index >= slides.length) {
+                track.style.transition = "none";
+                index = 0;
+                updatePosition();
+            }
+            if (index <= -slides.length + (slides.length - 1)) {
+                if (index < 0) { // Lógica para retroceso infinito
+                    track.style.transition = "none";
+                    index = slides.length - 1;
+                    updatePosition();
+                }
+            }
+        }, { once: true });
+    };
+
+    nextBtn.addEventListener('click', () => move('next'));
+    prevBtn.addEventListener('click', () => move('prev'));
+    
+    // Resize handler para recalcular anchos en cambios de orientación
+    window.addEventListener('resize', () => {
+        track.style.transition = "none";
+        updatePosition();
+    });
+
+    // Posicionamiento inicial
+    updatePosition();
+});
+
 // Lightbox Functionality
 function initLightbox() {
     const lightbox = document.getElementById('lightbox');
