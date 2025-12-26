@@ -221,6 +221,73 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
+/* ==========================================================================
+   CONTROLADOR DE CURSOS Y LIGHTBOX (EMUNAH)
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Referencias de Nodos del DOM
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImage');
+    const lbTitle = document.getElementById('lightboxLocation'); // Reutilizado para Título
+    const lbType = document.getElementById('lightboxType');
+    const lbDesc = document.getElementById('lightboxDescription');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    // 2. Lógica de Apertura (Event Delegation)
+    // Escuchamos en el documento para capturar clicks en elementos dinámicos
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.lightbox-trigger');
+        
+        if (trigger) {
+            // Extracción de metadatos del dataset del botón
+            const { title, type, image, description } = trigger.dataset;
+
+            // Inyección de datos en los registros del Lightbox
+            if (lbImg) lbImg.src = image || '';
+            if (lbTitle) lbTitle.textContent = title || 'Curso Emunah';
+            if (lbType) lbType.textContent = type || 'Información General';
+            if (lbDesc) lbDesc.textContent = description || '';
+
+            // Cambio de estado de la máquina visual
+            openModal();
+        }
+    });
+
+    // 3. Funciones de Control de Estado (State Management)
+    function openModal() {
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Scroll Lock (Inhibición de desplazamiento)
+        
+        // Listener para cerrar con tecla Escape (A11y)
+        document.addEventListener('keydown', handleEscKey);
+    }
+
+    function closeModal() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restaurar flujo del scroll
+        document.removeEventListener('keydown', handleEscKey);
+    }
+
+    // 4. Handlers de Cierre
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Cierre por click en el Backdrop (Overlay)
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeModal();
+        });
+    }
+
+    // Handler para interrupción por teclado
+    function handleEscKey(e) {
+        if (e.key === 'Escape') closeModal();
+    }
+});
+
 // Intersection Observer for scroll animations
 function observeElements() {
     const observer = new IntersectionObserver((entries) => {
