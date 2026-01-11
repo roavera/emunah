@@ -626,19 +626,20 @@ h4 {
 .about-text {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    /* Ajuste 1: Menos espacio entre bloques de párrafo */
+    gap: var(--spacing-sm); 
 }
 
 .intro-text {
     font-size: 1.25rem;
     font-weight: 500;
     color: var(--color-text-dark);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs); 
 }
 
 .about-text p {
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.5; 
     color: var(--color-text-body);
 }
 
